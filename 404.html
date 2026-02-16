@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Journey Not Found | Wanderlust Escapes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-black text-white h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2074&q=80')] bg-cover bg-center opacity-30"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
+        <div class="mb-8 inline-block p-6 bg-amber-400/10 rounded-full backdrop-blur-sm border border-amber-400/20">
+            <i class="fas fa-compass text-6xl text-amber-400 animate-pulse"></i>
+        </div>
+        <h1 class="text-7xl md:text-9xl font-bold mb-4 text-amber-400">404</h1>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Lost in the Wilderness?</h2>
+        <p class="text-xl text-gray-400 mb-10 leading-relaxed">
+            The destination you're looking for seems to be off the map. Let's get you back to the main trail.
+        </p>
+        <a href="/" class="inline-block bg-amber-400 text-black px-10 py-4 rounded-full text-lg font-semibold hover:bg-amber-500 transition-all duration-300 transform hover:scale-105">
+            <i class="fas fa-home mr-2"></i> Return Home
+        </a>
+    </div>
+
+    <script>
+        gsap.from(".z-10 > *", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>

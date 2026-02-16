@@ -1,0 +1,20 @@
+{
+  "name": "wanderlust-escapes",
+  "version": "1.0.0",
+  "description": "Luxury travel website for Wanderlust Escapes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js 3000"
+  },
+  "keywords": [
+    "travel",
+    "luxury",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Wanderlust Escapes",
+  "license": "MIT"
+}

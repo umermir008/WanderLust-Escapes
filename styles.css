@@ -1,0 +1,432 @@
+/* Custom CSS for Wanderlust Escapes */
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Hero Section Animations */
+.hero-bg {
+    will-change: transform;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+.hero-title, .hero-subtitle, .hero-cta {
+    will-change: opacity, transform;
+}
+
+/* 3D Card Effects */
+.destination-card {
+    perspective: 1000px;
+    transition: all 0.3s ease;
+}
+
+.destination-card img {
+    transition: transform 0.4s ease;
+    transform: scale(1);
+    will-change: transform;
+}
+
+/* Remove conflicting hover states that might interfere with JS */
+.destination-card:hover {
+    /* Hover effects are now handled by JavaScript */
+}
+
+.destination-card:hover img {
+    /* Image hover effects are now handled by JavaScript */
+}
+
+/* About Section 3D Tilt */
+.about-image img {
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: perspective(1000px) rotateY(15deg) rotateX(10deg) scale(1.05);
+}
+
+/* Experience Icons Glow Effect */
+.experience-icon {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experience-item:hover .experience-icon {
+    background: linear-gradient(45deg, #f59e0b, #fbbf24);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+    transform: translateY(-5px);
+}
+
+.experience-item:hover .experience-icon i {
+    color: #000;
+    transform: scale(1.2);
+}
+
+/* Button Ripple Effect */
+.hero-cta, .submit-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-cta:hover, .submit-btn:hover {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+.hero-cta::before, .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.hero-cta:hover::before, .submit-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Video Section */
+.play-btn {
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    }
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    animation: none;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.8);
+}
+
+/* Gallery Scroll Effects */
+.gallery-container {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) perspective(1000px) rotateY(10deg);
+}
+
+/* Form Field Focus Effects */
+.booking-input:focus {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Social Icons Bounce */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.2);
+    filter: drop-shadow(0 5px 10px rgba(245, 158, 11, 0.4));
+}
+
+/* Parallax Background Effects */
+.hero-bg, .experiences-bg, .booking-bg {
+    will-change: transform;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.show {
+    max-height: 300px !important;
+    opacity: 1 !important;
+}
+
+/* Mobile Menu Button Enhanced Styles */
+#mobile-menu-btn {
+    position: relative;
+    z-index: 60;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    will-change: transform;
+}
+
+#mobile-menu-btn:hover {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+#mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+/* Menu Icon Animation States */
+#menu-icon {
+    position: relative;
+    will-change: transform;
+}
+
+#menu-icon.active {
+    transform: rotate(180deg);
+    color: #f59e0b;
+}
+
+/* Mobile Menu Links Hover Effects */
+#mobile-menu a {
+    position: relative;
+    overflow: hidden;
+}
+
+#mobile-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+#mobile-menu a:hover::before {
+    left: 100%;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    #mobile-menu-btn {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    #mobile-menu {
+        margin-top: 16px;
+        border-radius: 12px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #mobile-menu a {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 640px) {
+    #mobile-menu-btn {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    #mobile-menu-btn i {
+        font-size: 1.2rem;
+    }
+    
+    #mobile-menu {
+        margin-top: 12px;
+        border-radius: 10px;
+    }
+    
+    #mobile-menu a {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    #mobile-menu-btn {
+        padding: 8px;
+        border-radius: 8px;
+    }
+    
+    #mobile-menu {
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+    
+    #mobile-menu a {
+        font-size: 0.95rem;
+        padding: 10px 14px;
+    }
+}
+
+/* High DPI and Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #mobile-menu-btn {
+        border-width: 0.5px;
+    }
+    
+    #mobile-menu {
+        border-width: 0.5px;
+    }
+}
+
+/* Touch Interaction Improvements */
+@media (hover: none) and (pointer: coarse) {
+    #mobile-menu-btn:hover {
+        background: rgba(245, 158, 11, 0.1);
+    }
+    
+    #mobile-menu a:hover {
+        background: rgba(245, 158, 11, 0.1);
+    }
+}
+
+/* Navbar Background on Scroll */
+.navbar-scrolled {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px);
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Responsive Design Optimizations */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .destination-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .about-image:hover img {
+        transform: scale(1.02);
+    }
+    
+    .gallery-item {
+        width: 280px;
+    }
+}
+
+/* Performance Optimizations */
+.destination-card,
+.experience-item,
+.gallery-item,
+.about-image img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Smooth Scrolling for Anchor Links */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-bg,
+    .experiences-bg,
+    .booking-bg {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Focus Indicators for Accessibility */
+.hero-cta:focus,
+.submit-btn:focus,
+.booking-input:focus,
+nav a:focus {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/* Animation Performance */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Golden Border Glow Effect */
+.destination-card:hover {
+    border: 2px solid transparent;
+    background: linear-gradient(#1f2937, #1f2937) padding-box,
+                linear-gradient(45deg, #f59e0b, #fbbf24) border-box;
+}
+
+/* Text Selection */
+::selection {
+    background: rgba(245, 158, 11, 0.3);
+    color: white;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 9999;
+}
+
+/* Luxury Touch */
+.luxury-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 25%, #f59e0b 50%, #fbbf24 75%, #f59e0b 100%);
+    background-size: 200% 200%;
+    animation: luxuryShine 3s ease-in-out infinite;
+}
+
+@keyframes luxuryShine {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
